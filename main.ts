@@ -32,6 +32,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite.overlapsWith(mySprite2)) {
         mySprite2.destroy()
         mySprite.destroy()
+        msuic = 2
         mySprite3 = sprites.create(assets.image`back`, SpriteKind.Player)
         otherSprite = sprites.create(assets.image`idle`, SpriteKind.Player)
         otherSprite.setPosition(74, 71)
@@ -70,8 +71,12 @@ forever(function () {
             music.playMelody("C D C D C C5 C C5 ", 120)
             console.log("inside music")
         } else {
-            music.playMelody("C E C G C A C B ", 200)
-            console.log("apartment music!")
+            if (3 < msuic) {
+                console.log("I NO EXIST.")
+            } else {
+                music.playMelody("C E C G C A C B ", 200)
+                console.log("apartment music!")
+            }
         }
     } else {
         console.log("No music :(")
